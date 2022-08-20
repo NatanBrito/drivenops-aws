@@ -19,22 +19,22 @@ services:
       - db_postgres_sort
     env_file:
       - back-end/.env
-  react_sort_app:
-    container_name: react_sort_app
-    build: ./front-end
-    volumes:
-      - build_react:/var/www/html
-  nginx_sort_app:
-    container_name: nginx_sort_app
-    build: ./nginx
-    ports:
-      - 8080:80
-    volumes:
-      - build_react:/var/www/html
-    depends_on:
-      - db_postgres_sort
-      - node_app-sort
-      - react_sort_app
+#   react_sort_app:
+#     container_name: react_sort_app
+#     build: ./front-end
+#     volumes:
+#       - build_react:/var/www/html
+#   nginx_sort_app:
+#     container_name: nginx_sort_app
+#     build: ./nginx
+#     ports:
+#       - 8080:80
+#     volumes:
+#       - build_react:/var/www/html
+#     depends_on:
+#       - db_postgres_sort
+#       - node_app-sort
+#       - react_sort_app
 volumes:
   db_postgres-sort:
-  build_react:
+  # build_react:
